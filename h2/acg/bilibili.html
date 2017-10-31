@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ACG</title>
+	<meta charset="UTF-8">
+	<link href="../icons/logo.ico"type="image/x-icon"rel="shortcut icon"/>
+	<link href="../css/main-1.css" rel="stylesheet" media="screen">
+	<link href="../css/single.css" rel="stylesheet" media="screen">
+
+
+</head>
+<body>
+	<!-- 导航改成自定义 -->
+	<header>
+	</header>
+<!-- 导航结束 -->
+
+	<!-- 正文部分 -->
+	<content>
+		<!-- 主体 -->
+		<main>
+					
+
+						<!-- music -->
+						<div class="music">
+						<!-- 头部 -->
+							<div class="m-header">
+								<!-- 标题 -->
+								<div class="m-title">
+									Bilibili
+								</div>
+								<!-- 标签 -->
+								<div class="m-label">
+									none
+								</div>
+							</div>
+							<!-- 主体部分 -->
+							<div class="m-body">
+								
+								<div class="bili">
+									<h3>请输入av号</h3>
+									<input type="text" id="aid" placeholder="av号">
+									
+									
+									<div id="showUrl" style="display: none;">
+										<p>视频链接</p>
+										<ul id="urls">
+										</ul>
+									</div>
+									
+								</div>
+								
+								
+																
+							</div>
+						</div>
+		</main>
+			
+		<div id="shadow">
+			<p>Searching。。。 。。。。</p>
+		</div>
+</content>
+
+
+
+<footer>
+	<p>Power by <a href="https://github.com/fefine/FeSe">FeSe</a> & <a href="https://github.com/fefine/FeSe-Rest">FeSe-Rest</a></p>
+</footer>
+	<script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript">
+
+
+		//判断终端类型
+		
+			//mobile phone
+	$(function(){
+		//判断终端类型
+		if(navigator.userAgent.toLowerCase().indexOf('iphone') > -1 || navigator.userAgent.toLowerCase().indexOf('andriod') > -1){
+			//mobile phone
+			$('#aid').after('<input type="submit" value="sure" onclick="sure()">');
+		}
+	});
+		
+	
+	document.onkeydown=function(e){
+		if(e.keyCode == 13){
+			
+			sure();
+			
+		}
+	}
+
+	function sure() {
+		
+		
+		var aid = $('#aid').val();
+		if(aid == '') return ;
+			
+			$('#shadow').addClass('shadow');
+			$('.shadow').removeAttr('id');
+		
+			var url = '/Api/BiliAVPath';
+			
+			$.ajax({
+				url:url,
+				data:'aid='+aid,
+				type:'get',
+				dataType:'json',
+				success:function(data){
+					 /* for(var i=0;i<data.length;i++){
+						console.log(data[i].name+'---'+data[i].urls);
+					}  */
+					//console.log(data);
+					$('.shadow').attr('id','shadow');
+					$('#shadow').removeClass('shadow');
+
+					$('#showUrl').removeAttr('style');
+					$('#urls').empty();
+					data.forEach(function(item){
+						var l = '';
+						item.urls.forEach(function(it){
+							l += '<li><input type="textarea" class="urls" value="'+it+'"></li>';							
+						})
+						var u = '<ul>'+l+'</ul>';
+						
+						$('#urls').append('<li><label>'+item.name+'</label></li>');
+						$('#urls').append('<li>'+u+'</li>');
+						
+					})
+						
+					}
+				});
+	}
+	
+</script>
+
+<div class="top" onclick="document.scrollingElement.scrollTop=0"></div>
+</body>
+</html>

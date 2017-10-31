@@ -1,0 +1,288 @@
+body{
+	text-align: center;
+	width: 100%;
+	height: 100%;
+	overflow-x: hidden;
+	margin: 0;
+	background:#f5f5f5; 
+	/* background:url('../images/s0.png') no-repeat; */
+}
+body, p, div, h1, h2, h3, h4, h5, h6, a {
+    font-family: "Time New Roman", "Ubuntu Mono", "Microsoft JhengHei";
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+/*文字换行*/
+p {
+	word-wrap:break-word;
+}
+video {
+    width: 100%;
+    height: auto;
+}
+footer {
+    border-top-style: groove;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+	/*页面基本样式*/
+	header {
+		left: 0px;
+	    right: 0px;
+	    top: 0px;
+		position: fixed;
+		/* box-shadow: 0 0 5px #aaa; */
+		z-index: 10;
+		background-color:rgba(39, 156, 150, 0.82);
+
+	}
+	.header-con {
+		margin: 0 auto;
+		width: 80%; max-width: 1024px;
+		
+	}
+	.logo {
+		font-size: 40px;
+	    color: #fff;
+	    font-weight: bold;
+	    display: inline-block;
+	    float: left;
+
+	}
+	.logo>a{
+		color: #fff;
+	}
+	.header-menu{
+		float: right;
+    	margin: 9px 2px 2px 2px;
+	}
+	.header-menu>a{
+	    margin: 10px;
+	    font-family: cursive;
+	    color: beige;
+	}
+	.header-menu>a:hover{
+	    color: #c0c0c0;
+	    content: attr(data-show);
+		border-bottom: 1px solid #000;
+		-webkit-transition: max-width 0.5s;
+		-moz-transition: max-width 0.5s;
+		transition: max-width 0.5s;
+	}
+/*	.header-menu>a::before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+	padding: 0 0 5px 0 !important;
+	max-width: 0;
+	border-bottom: 1px solid #000;
+	color: #000;
+	content: attr(data-show);
+	-webkit-transition: max-width 0.5s;
+	-moz-transition: max-width 0.5s;
+	transition: max-width 0.5s;
+}*/
+
+	
+/*main content*/
+	content {
+	    padding: 2em;
+	    margin: 1em auto;
+	    display: inline-block;
+	    width: 80%;
+	    max-width: 1024px;
+	    overflow-x:hidden; 
+	}
+	aside {
+    width: 25%;
+    float: right;
+    display: block;
+    top: 50px;
+    /*background-color: darkcyan;*/
+    
+	}
+
+
+
+
+
+	main {
+	    width: 87%;
+	    display: inline-block;
+	    /* background-color: beige; */
+	}
+
+/*music*/
+	article,.music{
+	    margin-top: 2em;
+	    background: floralwhite;
+	    border-radius: 5px;
+	    padding-top: 3em;
+	    padding-bottom: 3em;
+	    border: 1px solid #e8e8e8;
+	    box-shadow: 0 3px 10px #B6B6B6;
+	}
+	.a-header,.m-header{
+		text-align: center;
+	}
+	.a-title,.m-title{
+		font-size: 36px;
+		margin-top: 20px;
+    	margin-bottom: 10px;
+        font-family: inherit;
+	    font-weight: 500;
+	    line-height: 1.1;
+	    color: inherit;
+	}
+	.a-label,.m-label{
+		display: inline;
+	    padding: .2em .6em .3em;
+	    font-size: 75%;
+	    font-weight: 700;
+	    line-height: 1;
+	    white-space: nowrap;
+	    vertical-align: baseline;
+	    border-radius: .25em;
+	}
+	.a-body,.m-body{
+		padding: 2em;
+	}
+	
+	
+	.a-img{
+		border-radius: 5px;
+		border: 1px solid #ddd;
+	}
+	a.read-more{
+	    border: 1px #CC1515;
+	    position: relative;
+	    padding: 0 25px 0 25px;
+	    border-right-style: dashed;
+	    border-left-style: dashed;
+	}
+
+	img.a-sm-img {
+    	width: 100px;
+	}
+
+	.play{
+		    width: 50%;
+		    background: url('../music/bg.jpg');
+		    background-size: cover;
+		    height: 300px;
+		    /* text-align: center; */
+		    border-radius: 10px;
+		    margin: auto;
+
+	}
+	/*开始播放*/
+	.playing{
+		    width: 50%;
+		    background: url('../music/bg.jpg');
+		    background-size: cover;
+		    height: 300px;
+		    /* text-align: center; */
+		    border-radius: 10px;
+		    display: inline-block;
+
+	}
+	.play:hover{
+		    width: 50%;
+		    background: url('../music/bg.jpg');
+		    background-size: cover;
+		    height: 300px;
+		    /* text-align: center; */
+		    opacity: 0.5;
+		    border-radius: 10px;
+
+	}
+	.playing,.lrc{
+		display: block;
+	}
+	#music{
+		width: 100%;
+	}
+	button#m-start {
+	    width: 50px;
+	    height: 50px;
+	    margin-top: 125px;
+	}
+	.lrc{
+		/* float: right; */
+	    width: 50%;
+	    padding: 10px;
+	    /* position: relative; */
+	    top: -300px;
+	}
+
+	/*网页导航中出现的图片*/
+
+
+/**/
+.label {
+    /*list-style-type: none;*/
+    border-bottom-style: groove;
+}
+.label-header{
+	font-size: 24px;
+	padding-top: 5px;
+}
+li{
+	position: relative;
+    display: block;
+    padding: 10px 15px;
+    margin-bottom: -1px;
+   /* background-color: #fff;
+    border: 1px solid #ddd;*/
+}
+
+/*图标控制*/
+.con-start {
+    display: block;
+    background: url('../images/img.png') no-repeat -255px -63px;
+    width: 30px;
+    height: 30px;
+}
+
+.con-stop {
+    display: block;
+    background: url('../images/img.png') no-repeat -279px -63px;
+    width: 30px;
+    height: 30px;
+}
+
+.p-last {
+    display: inline-block;
+    background: url('../images/img.png') no-repeat -426px -66px;
+    width: 30px;
+    height: 30px;
+    margin: 12px;
+}
+.p-next {
+    display: inline-block;
+    background: url('../images/img.png') no-repeat -450px -66px;
+    width: 30px;
+    height: 30px;
+    margin: 12px;
+}
+
+.top{
+    display: block;
+    background: url('../images/img.png') no-repeat -160px -115px;
+    width: 30px;
+    height: 30px;
+    position: fixed;
+    left: 80%;
+    bottom: 8%;
+}
+.next {
+    /* font-family: cursive; */
+    font-family: 'MS Sans Serif', Geneva, sans-serif;
+    font-size: x-large;
+    color: brown;
+        margin-top: 2em;
+}
